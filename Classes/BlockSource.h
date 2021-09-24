@@ -1,0 +1,9 @@
+#ifndef INCLUDES_SDK_CLASSES_BLOCKSOURCE
+#define INCLUDES_SDK_CLASSES_BLOCKSOURCE
+
+class BlockSource {
+public:
+    //
+};
+
+#endif /* INCLUDES_SDK_CLASSES_BLOCKSOURCE */
