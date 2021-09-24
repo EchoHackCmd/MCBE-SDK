@@ -6,4 +6,5 @@ Simple usage:
 ```
 add_subdirectory(MCBE-SDK)
 
-target_link_libraries(Synthetic PRIVATE MCBE_SDK)```
+target_link_libraries(Synthetic PRIVATE MCBE_SDK)
+```
