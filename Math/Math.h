@@ -2,6 +2,7 @@
 #define MATH_MATH
 
 #include <functional>
+#include <bitset>
 
 class Math {
 public:
