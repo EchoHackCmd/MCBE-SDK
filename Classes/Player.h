@@ -228,6 +228,7 @@ public:
     virtual auto getInputMode(void) -> InputMode;
     virtual auto getPlayMode(void) -> ClientPlayMode;
     virtual auto reportMovementTelemetry(MovementEventType) -> void;
+    virtual auto onMovePlayerPacketNormal(Vec3<float>*, Vec2<float>*, float) -> void;
 };
 
 #endif /* INCLUDES_MCBE_SDK_CLASSES_PLAYER */
