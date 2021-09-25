@@ -56,9 +56,8 @@ public:
         if(offset > 10)
             *(float*)((uintptr_t)(this) + offset) = speed;
     };
-private:
-    virtual auto Constructor(void) -> void;
 public:
+    virtual auto hasComponent(HashedString*) -> bool;
     virtual auto getLastHurtByMob(void) -> Mob*;
     virtual auto setLastHurtByMob(Mob*) -> void;
     virtual auto getLastHurtByPlayer(void) -> Player*;
@@ -262,9 +261,7 @@ public:
     virtual auto load(CompoundTag*, DataLoadHelper*) -> bool;
     virtual auto loadLinks(CompoundTag const &, std::vector<ActorLink,std::allocator<ActorLink>> &, DataLoadHelper &) -> void;
     virtual auto getEntityTypeId(void) -> uint8_t;
-private:
-    virtual auto Function171(void) -> void;
-public:
+    virtual auto queryEntityRenderer(void) -> HashedString*;
     virtual auto getSourceUniqueID(void) -> ActorUniqueID;
     virtual auto setOnFire(int) -> void;
     virtual auto extinguishFire(void) -> void;
@@ -273,9 +270,7 @@ public:
     virtual auto isWearingLeatherArmor(void) -> bool;
     virtual auto getLiquidAABB(MaterialType) -> AABB<float>;
     virtual auto handleInsidePortal(Vec3<int>*) -> void;
-private:
-    virtual auto Function180(void) -> void;
-public:
+    virtual auto getContainerSize(void) -> int;
     virtual auto getPortalWaitTime(void) -> __int64;
     virtual auto getDimensionId(void) -> int*;
     virtual auto canChangeDimensions(void) -> bool;
