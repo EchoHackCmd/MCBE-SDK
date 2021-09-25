@@ -26,8 +26,16 @@ enum ClientPlayMode;
 enum MovementEventType;
 
 #include "Actor.h"
+#include "GameMode.h"
 
 class Player : public Actor {
+public:
+    auto getGameModeConst(void) -> GameMode* {
+        static unsigned int offset = NULL;
+        if(offset == NULL)
+            offset = *reinterpret_cast<int*>(Mem::findSig("48 8B BE ? ? ? ? 48 8B 8E ? ? ? ? 48 89 6C 24 ? 4C 89 74 24 ? 48 8B 07") + 3);
+        return *reinterpret_cast<GameMode**>((uintptr_t)(this) + offset);
+    };
 private:
     virtual auto Function275(void) -> void;
 public:
