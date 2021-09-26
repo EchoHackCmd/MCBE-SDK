@@ -3,6 +3,8 @@
 
 #include <functional>
 #include <bitset>
+#include <string>
+#include <sstream>
 
 class Math {
 public:
