@@ -27,6 +27,8 @@ enum MovementEventType;
 
 #include "Actor.h"
 #include "GameMode.h"
+#include "Dimension.h"
+#include "Level.h"
 
 class Player : public Actor {
 public:
@@ -35,6 +37,14 @@ public:
         if(offset == NULL)
             offset = *reinterpret_cast<int*>(Mem::findSig("48 8B BE ? ? ? ? 48 8B 8E ? ? ? ? 48 89 6C 24 ? 4C 89 74 24 ? 48 8B 07") + 3);
         return *reinterpret_cast<GameMode**>((uintptr_t)(this) + offset);
+    };
+    auto getDimensionConst(void) -> Dimension* {
+        static unsigned int offset = 0x360;
+        return *reinterpret_cast<Dimension**>((uintptr_t)(this) + offset);
+    };
+    auto getLevel(void) -> Level* {
+        static unsigned int offset = 0x370;
+        return *reinterpret_cast<Level**>((uintptr_t)(this) + offset);
     };
 private:
     virtual auto Function275(void) -> void;
